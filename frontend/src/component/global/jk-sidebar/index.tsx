@@ -31,24 +31,24 @@ export const menuItems: MenuProps['items'] = [
 });
 
 const JKSidebar: React.FC = () => {
-  const { sidebarSelectedKeys, sidebarOpenKeys,sidebarItems } = useJKAppContainerContext();
-	// const navigate = useNavigate();
-	const handleMenu: MenuProps['onClick'] = (e) => {
-		console.log(e);
-		// navigate("/test")
-		// navigate("")
-	}
+  const { sidebarSelectedKeys, sidebarOpenKeys, sidebarItems } = useJKAppContainerContext();
+  // const navigate = useNavigate();
+  const handleMenu: MenuProps['onClick'] = (e) => {
+    console.log(e);
+    // navigate("/test")
+    // navigate("")
+  };
 
   return (
     <>
       <Sider width={280}>
-				 <Menu
+        <Menu
           mode="inline"
-					selectedKeys={sidebarSelectedKeys}
-					openKeys={sidebarOpenKeys}
+          selectedKeys={sidebarSelectedKeys}
+          openKeys={sidebarOpenKeys}
           style={{ height: '100%' }}
           items={sidebarItems}
-					onClick={handleMenu}
+          onClick={handleMenu}
         />
       </Sider>
     </>

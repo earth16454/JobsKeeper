@@ -1,6 +1,6 @@
 import React from 'react';
 import JKAppContainerContext from './JKAppContainerContext';
-import { ContextJKAppContainerSidebarProps } from './interface/JKAppContainerInterface';
+// import { ContextJKAppContainerSidebarProps } from './interface/JKAppContainerInterface';
 import { UserOutlined } from '@ant-design/icons';
 import { menuItems } from '../jk-sidebar';
 import { MenuProps } from 'antd';
@@ -21,6 +21,11 @@ const JKAppContainerContextProvider: React.FC<JKAppContainerContextProviderProps
       label: 'Job Application Management',
     },
     ...(menuItems ?? []),
+    {
+      key: 'ohm',
+      icon: <UserOutlined />,
+      label: 'Ohm - Anothai',
+    },
   ]);
 
   return (
