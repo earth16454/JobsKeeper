@@ -1,8 +1,7 @@
 import React, { createContext, useContext } from 'react';
-import { ContextJKAppContainerSidebarProps } from './interface/JKAppContainerInterface';
 import { MenuProps } from 'antd';
 
-interface contextInitialValueJKAppContainerContext {
+interface JKConfigContextInterface {
   sidebarSelectedKeys: MenuProps['defaultSelectedKeys'];
   setSidebarSelectedKeys: (newValue: MenuProps['selectedKeys']) => void;
   sidebarOpenKeys: MenuProps['openKeys'];
@@ -11,7 +10,7 @@ interface contextInitialValueJKAppContainerContext {
   setSidebarItems: (newValue: MenuProps['items']) => void;
 }
 
-const contextInitialValue: contextInitialValueJKAppContainerContext = {
+const contextInitialValue: JKConfigContextInterface = {
   sidebarSelectedKeys: undefined,
   setSidebarSelectedKeys: () => {},
   sidebarOpenKeys: undefined,
@@ -20,16 +19,14 @@ const contextInitialValue: contextInitialValueJKAppContainerContext = {
   setSidebarItems: () => {},
 };
 
-const JKAppContainerContext = createContext<contextInitialValueJKAppContainerContext>(contextInitialValue);
+const JKConfigContext = createContext<JKConfigContextInterface>(contextInitialValue);
 
-// export const useJKAppContainerContext = () => useContext(JKAppContainerContext);
-
-export const useJKAppContainerContext = () => {
-  const context = useContext(JKAppContainerContext);
+export const useJKConfigContext = () => {
+  const context = useContext(JKConfigContext);
   if (!context) {
-      throw new Error('useMyContext must be used within a MyProvider');
+    throw new Error('useMyContext must be used within a MyProvider');
   }
   return context;
 };
 
-export default JKAppContainerContext;
+export default JKConfigContext;

@@ -1,26 +1,21 @@
 import React from 'react';
-import JKAppContainerContext from './JKAppContainerContext';
-// import { ContextJKAppContainerSidebarProps } from './interface/JKAppContainerInterface';
+import JKConfigContext from './JKConfigContext';
 import { UserOutlined } from '@ant-design/icons';
-import { menuItems } from '../jk-sidebar';
 import { MenuProps } from 'antd';
 
 interface JKAppContainerContextProviderProps {
   children?: React.ReactNode;
 }
 
-const JKAppContainerContextProvider: React.FC<JKAppContainerContextProviderProps> = ({
-  children,
-}) => {
-  const [sidebarSelectedKeys, setSidebarSelectedKeys] = React.useState<MenuProps['selectedKeys']>();
-  const [sidebarOpenKeys, setSidebarOpenKeys] = React.useState<MenuProps['selectedKeys']>();
+const JKConfigContextProvider: React.FC<JKAppContainerContextProviderProps> = ({ children }) => {
+  const [sidebarSelectedKeys, setSidebarSelectedKeys] = React.useState<MenuProps['selectedKeys']>([]);
+  const [sidebarOpenKeys, setSidebarOpenKeys] = React.useState<MenuProps['selectedKeys']>([]);
   const [sidebarItems, setSidebarItems] = React.useState<MenuProps['items']>([
     {
       key: 'jk_job_application_management',
       icon: <UserOutlined />,
       label: 'Job Application Management',
     },
-    ...(menuItems ?? []),
     {
       key: 'ohm',
       icon: <UserOutlined />,
@@ -29,7 +24,7 @@ const JKAppContainerContextProvider: React.FC<JKAppContainerContextProviderProps
   ]);
 
   return (
-    <JKAppContainerContext.Provider
+    <JKConfigContext.Provider
       value={{
         sidebarItems,
         setSidebarItems,
@@ -40,8 +35,8 @@ const JKAppContainerContextProvider: React.FC<JKAppContainerContextProviderProps
       }}
     >
       {children}
-    </JKAppContainerContext.Provider>
+    </JKConfigContext.Provider>
   );
 };
 
-export default JKAppContainerContextProvider;
+export default JKConfigContextProvider;

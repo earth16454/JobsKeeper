@@ -1,42 +1,31 @@
-import { Button, Layout, Menu, MenuProps } from 'antd';
 import React from 'react';
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
-import { useJKAppContainerContext } from '../jk-app-container/JKAppContainerContext';
-import { ContextJKAppContainerSidebarProps } from '../jk-app-container/interface/JKAppContainerInterface';
+import { Layout, Menu, MenuProps } from 'antd';
 import { useNavigate } from 'react-router-dom';
-// import { useNavigate } from 'react-router-dom';
+import { useJKConfigContext } from '../../../context/global/JKConfigContext';
 
 const { Sider } = Layout;
 
-export const menuItems: MenuProps['items'] = [
-  UserOutlined,
-  LaptopOutlined,
-  NotificationOutlined,
-].map((icon, index) => {
-  const key = String(index + 1);
-
-  return {
-    key: `subnav${key}`,
-    icon: React.createElement(icon),
-    label: `subnav ${key}`,
-
-    children: new Array(4).fill(null).map((_, j) => {
-      const subKey = index * 4 + j + 1;
-      return {
-        key: subKey,
-        label: `option${subKey}`,
-      };
-    }),
-  };
-});
-
 const JKSidebar: React.FC = () => {
-  const { sidebarSelectedKeys, sidebarOpenKeys, sidebarItems } = useJKAppContainerContext();
-  // const navigate = useNavigate();
+  const { sidebarSelectedKeys, sidebarOpenKeys, sidebarItems } = useJKConfigContext();
+  const [selectedKeys, setSelectedKeys] = React.useState<MenuProps['selectedKeys']>();
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (sidebarSelectedKeys) {
+      if (sidebarSelectedKeys[0] === '') {
+        setSelectedKeys(['jk_job_application_management']);
+      } else {
+        setSelectedKeys(sidebarSelectedKeys);
+      }
+    }
+  }, [sidebarSelectedKeys]);
+
   const handleMenu: MenuProps['onClick'] = (e) => {
-    console.log(e);
-    // navigate("/test")
-    // navigate("")
+    if (e.key === 'jk_job_application_management') {
+      navigate('/');
+    } else {
+      navigate(`/${e.key}`);
+    }
   };
 
   return (
@@ -44,7 +33,7 @@ const JKSidebar: React.FC = () => {
       <Sider width={280}>
         <Menu
           mode="inline"
-          selectedKeys={sidebarSelectedKeys}
+          selectedKeys={selectedKeys}
           openKeys={sidebarOpenKeys}
           style={{ height: '100%' }}
           items={sidebarItems}

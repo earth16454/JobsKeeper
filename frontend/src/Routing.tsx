@@ -1,29 +1,19 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import JobApplicationManager from './pages/jobApplicationManager';
-import Subnav1 from './pages/subnav1';
-import Subnav2 from './pages/subnav2';
-import Ohm from './pages/ohm';
+import { JKRoutes } from './component/route/JKRoutes';
+import JKAppContainer from './component/global/jk-app-container/JKAppContainer';
+
+const AllRoutes = [...JKRoutes];
 
 const Routing: React.FC = () => {
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <JobApplicationManager />,
-    },
-    {
-      path: 'subnav1',
-      element: <Subnav1 />,
-    },
-    {
-      path: 'subnav2',
-      element: <Subnav2 />,
-    },
-    {
-      path: 'ohm',
-      element: <Ohm />,
-    },
-  ]);
+  const router = createBrowserRouter(
+    AllRoutes.map((item, index) => {
+      return {
+        path: item.path,
+        element: <JKAppContainer key={index}>{item.element}</JKAppContainer>,
+      };
+    })
+  );
   return <RouterProvider router={router}></RouterProvider>;
 };
 

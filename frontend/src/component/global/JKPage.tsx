@@ -3,7 +3,7 @@ import JKBreadcrumb, { StaticBreadcrumb } from './JKBreadcrumb';
 import { ContentContainer } from '../../assests/styled/Container.styled';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
-import { useJKAppContainerContext } from './jk-app-container/JKAppContainerContext';
+import { useJKConfigContext } from '../../context/global/JKConfigContext';
 
 export interface JKPageProps {
   staticBreadcrumb?: StaticBreadcrumb[];
@@ -12,18 +12,15 @@ export interface JKPageProps {
 }
 
 const JKPage: React.FC<JKPageProps> = ({ staticBreadcrumb, withContent = false, children }) => {
-  const { setSidebarSelectedKeys } = useJKAppContainerContext();
+  const { setSidebarSelectedKeys } = useJKConfigContext();
   const location = useLocation();
-  console.log('location:', location);
-  // console.log("sidebar:", sidebar);
 
   React.useEffect(() => {
-      // setSidebar({
-      //   ...sidebar,
-      //   defaultSelectedKeys: [location.pathname.split("/")[1]]
-      // })
-      setSidebarSelectedKeys([location.pathname.split("/")[1]])
-  }, []);
+    if (location.pathname) {
+      const newSidebarSelectedKeys = location.pathname.split('/')[1];
+      setSidebarSelectedKeys([newSidebarSelectedKeys]);
+    }
+  }, [location.pathname, setSidebarSelectedKeys]);
 
   return (
     <DFlexStyled>
