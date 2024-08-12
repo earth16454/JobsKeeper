@@ -3,16 +3,16 @@ import { ConfigProvider } from 'antd';
 import customizeTheme from './config/CustomizeTheme';
 import GlobalStyles from './assests/styled/GlobalStyles';
 import './assests/styled/globalStyles.css';
-import JKAppContainer from './component/global/jk-app-container/JKAppContainer';
 import Routing from './Routing';
+import JKConfigContextProvider from './context/global/JKConfigContextProvider';
 
 function App() {
   return (
     <ConfigProvider {...customizeTheme}>
-      <GlobalStyles />
-      <JKAppContainer>
+      <JKConfigContextProvider>
+        <GlobalStyles />
         <Routing />
-      </JKAppContainer>
+      </JKConfigContextProvider>
     </ConfigProvider>
   );
 }
