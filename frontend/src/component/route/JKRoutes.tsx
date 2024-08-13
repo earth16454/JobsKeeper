@@ -2,7 +2,7 @@ import { RouteObject } from 'react-router-dom';
 import Subnav1 from '../../pages/subnav1';
 import Subnav2 from '../../pages/subnav2';
 import JobApplicationManager from '../../pages/jobApplicationManager';
-import Ohm from '../../pages/ohm';
+import PersonalInformation from '../../pages/ohm/index';
 
 export const JKRoutes: RouteObject[] = [
   {
@@ -19,6 +19,6 @@ export const JKRoutes: RouteObject[] = [
   },
   {
     path: 'ohm',
-    element: <Ohm />,
+    element: <PersonalInformation />,
   },
 ];
