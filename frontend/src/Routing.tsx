@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import JobApplicationManager from './pages/jobApplicationManager';
 import Subnav1 from './pages/subnav1';
 import Subnav2 from './pages/subnav2';
-import Ohm from './pages/ohm';
+import PersonalInformation from './pages/ohm';
 
 const Routing: React.FC = () => {
   const router = createBrowserRouter([
@@ -21,7 +21,7 @@ const Routing: React.FC = () => {
     },
     {
       path: 'ohm',
-      element: <Ohm />,
+      element: <PersonalInformation />,
     },
   ]);
   return <RouterProvider router={router}></RouterProvider>;
