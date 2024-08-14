@@ -21,6 +21,11 @@ const JKConfigContextProvider: React.FC<JKAppContainerContextProviderProps> = ({
       icon: <UserOutlined />,
       label: 'Ohm - Anothai',
     },
+    {
+      key: 'OperationsNumber',
+      icon: <UserOutlined />,
+      label: 'Operations Number',
+    },
   ]);
 
   return (
