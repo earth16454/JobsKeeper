@@ -58,13 +58,17 @@ const JobApplicationManager: React.FC = () => {
 
   const staticBreadcrumb: StaticBreadcrumb[] = [
     {
-      title: <></>,
+      title: 'Home',
+      path: '/',
+    },
+    {
+      title: 'Job Application Management',
       path: '/',
     },
   ];
 
   return (
-    <JKPage withContent>
+    <JKPage withContent staticBreadcrumb={staticBreadcrumb}>
       <Row style={{ flexDirection: 'column', gap: 16 }}>
         <HeaderTitle
           title="Job Application Management"
