@@ -28,4 +28,8 @@ export const JKRoutes: RouteObject[] = [
     path: 'OperationsNumber',
     element: <OperationsNumber />,
   },
+  {
+    path: 'OperationsNumber',
+    element: <OperationsNumber />,
+  },
 ];
