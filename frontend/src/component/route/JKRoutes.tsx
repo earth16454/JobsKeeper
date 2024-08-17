@@ -22,15 +22,7 @@ export const JKRoutes: RouteObject[] = [
   },
   {
     path: 'ohm',
-    element: <Ohm />,
-  },
-  {
-    path: 'OperationsNumber',
-    element: <OperationsNumber />,
-  },
-  {
-    path: 'OperationsNumber',
-    element: <OperationsNumber />,
+    element: <PersonalInformation />,
   },
   {
     path: 'OperationsNumber',
