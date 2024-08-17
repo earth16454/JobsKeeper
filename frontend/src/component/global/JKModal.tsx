@@ -5,8 +5,9 @@ import styled from 'styled-components';
 export const JKModalStyled = styled(Modal)`
   .ant-modal-body {
     height: 100%;
-    max-height: 65vh;
-    overflow-y: auto;
+    min-height: 20vh;
+    max-height: 65vh !important;
+    overflow-y: auto !important;
   }
 `;
 

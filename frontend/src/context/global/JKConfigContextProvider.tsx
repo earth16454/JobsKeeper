@@ -26,6 +26,11 @@ const JKConfigContextProvider: React.FC<JKAppContainerContextProviderProps> = ({
       icon: <UserOutlined />,
       label: 'Operations Number',
     },
+    {
+      key: 'profile-page',
+      icon: <UserOutlined />,
+      label: 'Profile Page',
+    }
   ]);
 
   return (

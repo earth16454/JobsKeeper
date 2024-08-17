@@ -35,6 +35,10 @@ export const ContainerStyled = styled.div`
     @media (min-width: ${breakpoints.xxl}) {
         max-width: 1320px;
     }
+
+    .ant-typography {
+        margin: 0 !important;
+    }
 `;
 
 interface ContainerProps

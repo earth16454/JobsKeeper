@@ -20,7 +20,8 @@ export default createGlobalStyle`
         --rgb-text-color: 3, 3, 3;
         --rgb-bg-color: rgb(246, 246, 246);
 
-        /* --header-box-shadow: 0px 0px 8px rgba(168, 216, 243, 0.5); */
+        --header-box-shadow: 0px 0px 8px rgba(168, 216, 243, 0.5);
+        --card-box-shadow: 0px 0px 8px rgba(168, 216, 243, 0.3);
     }
 
     body {
@@ -32,9 +33,8 @@ export default createGlobalStyle`
         box-shadow: var(--card-box-shadow);
     }
 
-    :where(.css-dev-only-do-not-override-1nvjlz2).ant-modal .ant-modal-content,
     .ant-modal-content {
-        padding: 0;
+        padding: 0 !important;
 
         .ant-modal-header {
             padding: 16px 24px;
