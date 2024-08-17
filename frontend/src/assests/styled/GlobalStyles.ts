@@ -31,4 +31,19 @@ export default createGlobalStyle`
         border-width: 0;
         box-shadow: var(--card-box-shadow);
     }
+
+    :where(.css-dev-only-do-not-override-1nvjlz2).ant-modal .ant-modal-content,
+    .ant-modal-content {
+        padding: 0;
+
+        .ant-modal-header {
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .ant-modal-footer {
+            padding: 16px 24px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+    }
 `;
