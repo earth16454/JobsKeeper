@@ -3,6 +3,9 @@ import Subnav1 from '../../pages/subnav1';
 import Subnav2 from '../../pages/subnav2';
 import JobApplicationManager from '../../pages/jobApplicationManager';
 import PersonalInformation from '../../pages/ohm/index';
+import OperationsNumber from '../../pages/test01/OperationsNumber';
+
+
 
 export const JKRoutes: RouteObject[] = [
   {
@@ -19,6 +22,10 @@ export const JKRoutes: RouteObject[] = [
   },
   {
     path: 'ohm',
-    element: <PersonalInformation />,
+    element: <Ohm />,
+  },
+  {
+    path: 'OperationsNumber',
+    element: <OperationsNumber />,
   },
 ];
