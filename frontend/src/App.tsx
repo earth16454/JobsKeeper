@@ -2,7 +2,6 @@ import React from 'react';
 import { ConfigProvider } from 'antd';
 import customizeTheme from './config/CustomizeTheme';
 import GlobalStyles from './assests/styled/GlobalStyles';
-import './assests/styled/globalStyles.css';
 import Routing from './Routing';
 import JKConfigContextProvider from './context/global/JKConfigContextProvider';
 

@@ -15,10 +15,10 @@ const JKNavbar: React.FC = () => {
         }}
       >
         <Row align="middle" justify={'space-between'}>
-          <Typography.Title level={5} style={{ margin: 0, color: 'var(--rgb-primary)' }}>
+          <Typography.Title level={4} style={{ margin: 0, color: 'var(--rgb-primary)' }}>
             JobsKeeper
           </Typography.Title>
-          <Menu mode="horizontal" items={headerMenuItems} style={{ borderBottom: 'none' }}></Menu>
+          {/* <Menu mode="horizontal" items={headerMenuItems} style={{ borderBottom: 'none' }}></Menu> */}
           <Menu mode="horizontal" style={{ borderBottom: 'none' }}>
             <Row align={'middle'}>
               <Typography>Thanaphong Songsisai</Typography>

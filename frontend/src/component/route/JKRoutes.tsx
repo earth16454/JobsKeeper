@@ -4,6 +4,7 @@ import Subnav2 from '../../pages/subnav2';
 import JobApplicationManager from '../../pages/jobApplicationManager';
 import PersonalInformation from '../../pages/ohm/index';
 import OperationsNumber from '../../pages/test01/OperationsNumber';
+import ProfilePage from '../../pages/ProfilePage';
 
 
 
@@ -28,4 +29,8 @@ export const JKRoutes: RouteObject[] = [
     path: 'OperationsNumber',
     element: <OperationsNumber />,
   },
+  {
+    path: 'profile-page',
+    element: <ProfilePage />
+  }
 ];

@@ -20,7 +20,8 @@ export default createGlobalStyle`
         --rgb-text-color: 3, 3, 3;
         --rgb-bg-color: rgb(246, 246, 246);
 
-        /* --header-box-shadow: 0px 0px 8px rgba(168, 216, 243, 0.5); */
+        --header-box-shadow: 0px 0px 8px rgba(168, 216, 243, 0.5);
+        --card-box-shadow: 0px 0px 8px rgba(168, 216, 243, 0.3);
     }
 
     body {
@@ -30,5 +31,19 @@ export default createGlobalStyle`
     .ant-card {
         border-width: 0;
         box-shadow: var(--card-box-shadow);
+    }
+
+    .ant-modal-content {
+        padding: 0 !important;
+
+        .ant-modal-header {
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .ant-modal-footer {
+            padding: 16px 24px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
     }
 `;

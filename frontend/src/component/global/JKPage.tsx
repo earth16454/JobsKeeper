@@ -1,12 +1,13 @@
 import React from 'react';
-import JKBreadcrumb, { StaticBreadcrumb } from './JKBreadcrumb';
+import JKBreadcrumb from './JKBreadcrumb';
 import { ContentContainer } from '../../assests/styled/Container.styled';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import { useJKConfigContext } from '../../context/global/JKConfigContext';
+import { BreadcrumbItemType } from 'antd/es/breadcrumb/Breadcrumb';
 
 export interface JKPageProps {
-  staticBreadcrumb?: StaticBreadcrumb[];
+  staticBreadcrumb?: BreadcrumbItemType[];
   withContent?: boolean;
   children?: React.ReactNode;
 }
