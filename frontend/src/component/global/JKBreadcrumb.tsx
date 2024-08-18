@@ -1,43 +1,50 @@
+import React from 'react';
 import { Breadcrumb, Card, Typography } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BreadcrumbItemType } from 'antd/es/breadcrumb/Breadcrumb';
 
 export interface JKBreadcrumbProps {
-  staticBreadcrumb?: StaticBreadcrumb[];
-}
-
-export interface StaticBreadcrumb {
-  title: React.ReactNode;
-  path: string;
+  staticBreadcrumb?: BreadcrumbItemType[];
 }
 
 const JKBreadcrumb: React.FC<JKBreadcrumbProps> = ({ staticBreadcrumb }) => {
   const navigate = useNavigate();
+  const [breadcrumbItems, setBreadcrumbItems] = React.useState<BreadcrumbItemType[]>([
+    {
+      title: (
+        <Typography.Link onClick={() => navigate('/')}>
+          <HomeOutlined style={{ marginRight: 8 }} />
+          Home
+        </Typography.Link>
+      ),
+      path: '/',
+    },
+    {
+      title: 'List',
+      path: '/',
+    },
+  ]);
+
+  React.useEffect(() => {
+    if (staticBreadcrumb && staticBreadcrumb.length > 0) {
+      const newBreadcrumbItems: BreadcrumbItemType[] = staticBreadcrumb.map((breadcrumb, index) => {
+        return {
+          title: (
+            <Typography.Link onClick={() => navigate(breadcrumb.path ?? '')} key={`breadcrumb_${index}`}>
+              {breadcrumb.title}
+            </Typography.Link>
+          ),
+          ...breadcrumb,
+        };
+      });
+      setBreadcrumbItems(newBreadcrumbItems);
+    }
+  }, [staticBreadcrumb]);
+
   return (
     <Card styles={{ body: { padding: '8px 16px' } }}>
-      <Breadcrumb>
-        {staticBreadcrumb && staticBreadcrumb.length > 0 ? (
-          staticBreadcrumb.map((breadcrumb, index) => (
-            <Breadcrumb.Item>
-              <Typography.Link onClick={() => navigate(breadcrumb.path)} key={`breadcrumb_${index}`}>
-                {breadcrumb.title}
-              </Typography.Link>
-            </Breadcrumb.Item>
-          ))
-        ) : (
-          <>
-            <Breadcrumb.Item>
-              <Typography.Link>
-                <HomeOutlined style={{ marginRight: 8 }} />
-                Home
-              </Typography.Link>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
-          </>
-        )}
-      </Breadcrumb>
+      <Breadcrumb items={breadcrumbItems}></Breadcrumb>
     </Card>
   );
 };

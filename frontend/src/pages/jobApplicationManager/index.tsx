@@ -1,12 +1,13 @@
 import React from 'react';
 import HeaderTitle from '../../component/HeaderTitle';
-import { Modal, Row, Table } from 'antd';
+import { Row, Table } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import mockData from './mockData.json';
 import { JobApplication } from '../../interface/JobApplication';
 import JAMModal from './JAMModal';
 import JKPage from '../../component/global/JKPage';
-import { StaticBreadcrumb } from '../../component/global/JKBreadcrumb';
+import { BreadcrumbItemType } from 'antd/es/breadcrumb/Breadcrumb';
+import { HomeOutlined } from '@ant-design/icons';
 
 const JobApplicationManager: React.FC = () => {
   const [dataSource, setDataSource] = React.useState<JobApplication[]>([]);
@@ -56,9 +57,14 @@ const JobApplicationManager: React.FC = () => {
     },
   ];
 
-  const staticBreadcrumb: StaticBreadcrumb[] = [
+  const staticBreadcrumb: BreadcrumbItemType[] = [
     {
-      title: 'Home',
+      title: (
+        <>
+          <HomeOutlined style={{ marginRight: 8 }} />
+          Home
+        </>
+      ),
       path: '/',
     },
     {

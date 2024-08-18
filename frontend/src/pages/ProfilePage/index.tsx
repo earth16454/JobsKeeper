@@ -7,16 +7,11 @@ import JKModal from '../../component/global/JKModal';
 const { Title } = Typography;
 
 const ProfilePage: React.FC = () => {
-  const [isShowModal, setIsShowModal] = React.useState<boolean>(false);
 
   return (
     <>
       <JKPage withContent>
-        <Row align={'middle'}>
-          <Col span={24}>
-            <Title level={4}>Profile</Title>
-          </Col>
-        </Row>
+        <Title level={4}>Profile</Title>
       </JKPage>
     </>
   );
