@@ -1,0 +1,56 @@
+[
+    {
+        "key": 1,
+        "Position": "Junior FrontEnd Developer",
+        "CompanyName": "EveryMatrix",
+        "ApplicationDate": "2024-07-15",
+        "Location": "Chiang Mai, Thailand",
+        "Status": "Pending",
+        "Notes": "Initial application sent, waiting for response."
+    },
+    {
+        "key": 2,
+        "Position": "Software Engineer",
+        "CompanyName": "Tech Solutions Ltd.",
+        "ApplicationDate": "2024-06-25",
+        "Location": "Bangkok, Thailand",
+        "Status": "Interviewed",
+        "Notes": "Interview went well, waiting for feedback."
+    },
+    {
+        "key": 3,
+        "Position": "Backend Developer",
+        "CompanyName": "Innovative Startups Inc.",
+        "ApplicationDate": "2024-07-05",
+        "Location": "Phuket, Thailand",
+        "Status": "Rejected",
+        "Notes": "Received a rejection email."
+    },
+    {
+        "key": 4,
+        "Position": "Full Stack Developer",
+        "CompanyName": "Global Tech",
+        "ApplicationDate": "2024-07-10",
+        "Location": "Chiang Mai, Thailand",
+        "Status": "Pending",
+        "Notes": "Sent follow-up email, no response yet."
+    },
+    {
+        "key": 5,
+        "Position": "DevOps Engineer",
+        "CompanyName": "Cloud Services Co.",
+        "ApplicationDate": "2024-07-20",
+        "Location": "Bangkok, Thailand",
+        "Status": "Pending",
+        "Notes": "Application submitted, awaiting initial review."
+    },
+    {
+        "key": 6,
+        "Position": "Data Analyst",
+        "CompanyName": "Data Insights",
+        "ApplicationDate": "2024-06-30",
+        "Location": "Chiang Mai, Thailand",
+        "Status": "Interviewed",
+        "Notes": "Second interview scheduled for next week."
+    }
+]

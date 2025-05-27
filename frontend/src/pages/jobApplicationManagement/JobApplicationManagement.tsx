@@ -2,24 +2,18 @@ import React from 'react';
 import HeaderTitle from '../../component/HeaderTitle';
 import { Row, Table } from 'antd';
 import { ColumnsType } from 'antd/es/table';
-import mockData from './mockData.json';
-import { JobApplication } from '../../interface/JobApplication';
 import JAMModal from './JAMModal';
 import JKPage from '../../component/global/JKPage';
 import { BreadcrumbItemType } from 'antd/es/breadcrumb/Breadcrumb';
 import { HomeOutlined } from '@ant-design/icons';
+import { useJobApplicationManagementContext } from './context/JobApplicationManagerContext';
+import { JAMTableData } from './constant/JAMInterface';
 
 const JobApplicationManagement: React.FC = () => {
-  const [dataSource, setDataSource] = React.useState<JobApplication[]>([]);
+  const { tableData } = useJobApplicationManagementContext();
   const [openModal, setOpenModal] = React.useState<boolean>(false);
 
-  React.useEffect(() => {
-    if (Array.isArray(mockData) && mockData.length > 0) {
-      setDataSource(mockData);
-    }
-  }, [mockData]);
-
-  const columns: ColumnsType<JobApplication> = [
+  const columns: ColumnsType<JAMTableData> = [
     {
       title: 'No.',
       key: 'key',
@@ -27,33 +21,33 @@ const JobApplicationManagement: React.FC = () => {
     },
     {
       title: 'Position',
-      key: 'position',
-      dataIndex: 'position',
+      key: 'Position',
+      dataIndex: 'Position',
     },
     {
       title: 'Company name',
-      key: 'company_name',
-      dataIndex: 'company_name',
+      key: 'CompanyName',
+      dataIndex: 'CompanyName',
     },
     {
       title: 'Application date',
-      key: 'application_date',
-      dataIndex: 'application_date',
+      key: 'ApplicationDate',
+      dataIndex: 'ApplicationDate',
     },
     {
       title: 'Location',
-      key: 'location',
-      dataIndex: 'location',
+      key: 'Location',
+      dataIndex: 'Location',
     },
     {
       title: 'Status',
-      key: 'status',
-      dataIndex: 'status',
+      key: 'Status',
+      dataIndex: 'Status',
     },
     {
       title: 'Notes',
-      key: 'notes',
-      dataIndex: 'notes',
+      key: 'Notes',
+      dataIndex: 'Notes',
     },
   ];
 
@@ -82,7 +76,7 @@ const JobApplicationManagement: React.FC = () => {
             setOpenModal(true);
           }}
         />
-        <Table dataSource={dataSource} bordered columns={columns} scroll={{ x: 1200 }} size="small"></Table>
+        <Table dataSource={tableData} bordered columns={columns} scroll={{ x: 1200 }} size="small"></Table>
       </Row>
       <JAMModal
         open={openModal}

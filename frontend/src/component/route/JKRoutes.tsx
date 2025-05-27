@@ -1,7 +1,7 @@
 import { RouteObject } from 'react-router-dom';
 import Subnav1 from '../../pages/subnav1';
 import Subnav2 from '../../pages/subnav2';
-import JobApplicationManager from '../../pages/jobApplicationManager';
+import JobApplicationManagement from '../../pages/jobApplicationManagement';
 import PersonalInformation from '../../pages/ohm/index';
 import OperationsNumber from '../../pages/test01/OperationsNumber';
 import ProfilePage from '../../pages/ProfilePage';
@@ -11,7 +11,7 @@ import ProfilePage from '../../pages/ProfilePage';
 export const JKRoutes: RouteObject[] = [
   {
     path: '/',
-    element: <JobApplicationManager />,
+    element: <JobApplicationManagement />,
   },
   {
     path: 'subnav1',
